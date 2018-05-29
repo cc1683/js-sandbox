@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap-material-design.min.css">
+    <title>Lookup table</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center justify-content-center p-3 m-3">
+                <label for="name">Username: </label>
+                <input type="text" name="name" value="" id="name">
+                <button class="btn btn-primary btn-submit" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const button = document.querySelector('.btn-submit');
+        button.addEventListener('click', check);
+        function check() {
+            let username = document.getElementById("name").value;
+            let lookup = {
+                'luis': 'welcome',
+                'bob': 'session expired',
+                '': 'please register'
+            };
+            alert(lookup[username]);          
+        }
+
+        var session = {
+            'Luis': 'You have permission to access',
+            'Albert': 'Session expired',
+            'Bob': 'Session expired',
+            '': 'Please register'
+        };
+        console.log(session['Luis']); // output: You have permission to access
+    </script>
+    
+</body>
+</html>
