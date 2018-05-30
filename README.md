@@ -1,3 +1,10 @@
+### Todo ###
+:sunny: :sunny: :sunny:
+
+- [ ] javascript events
+- [ ] use javascript event to trigger element's style
+- [ ] set duration/time 
+
 # Difference between **var** and **let** #
 ---
 **var** is scoped to the nearest function block, **let** is scoped to the nearest enclosing block.
