@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap-material-design.min.css">
+    <title>JS Test - Random</title>
+</head>
+<body>
+    <div class="container p-3 m-3">
+        <div class="row">
+            <div class="col text-center justify-content-center">
+                Javascript Random
+            </div>
+        </div>
+    </div>
+
+    <div class="container p-3 m-3">
+        <div class="row">
+            <div class="col text-center justify-content-center">
+                <p>Predefined array items</p>
+                <div class="name-list"></div>
+                <button class="btn btn-raised btn-secondary btn-display">Display Array</button>
+                <div class="winner-list"></div>
+                <button class="btn btn-raised btn-info btn-winner">Winner</button>
+                <button class="btn btn-raised btn-danger btn-reset">Reset</button>
+            </div>
+            <div class="col text-center justify-content-center">
+                <p>User define array items</p>
+                <label for="inputFood"></label>
+                <input class="input-area" type="text" name="inputFood">
+                <button class="btn btn-raised btn-primary btn-submit">Submit</button>
+                <div>Food in cart: <p class="food-list"></p></div>
+                <button class="btn btn-raised btn-secondary btn-display-food">Display Array</button>
+                <div class="food-choice-list"></div>
+                <button class="btn btn-raised btn-info btn-winner-food">Winner</button>
+                <button class="btn btn-raised btn-danger btn-reset-food">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* ============= Predefined array items ================== */
+        const btnShow = document.querySelector('.btn-display');
+        const btnWinner = document.querySelector('.btn-winner');
+        const btnReset = document.querySelector('.btn-reset');
+        btnShow.addEventListener('click', () => {
+            document.querySelector('.name-list').innerHTML = nameList;
+        });
+
+        btnWinner.addEventListener('click', () => {
+            var winner = nameList[Math.floor(Math.random() * nameList.length)];
+            document.querySelector('.winner-list').innerHTML = winner;
+        });
+
+        btnReset.addEventListener('click', () => {
+            document.querySelector('.name-list').innerHTML = '';
+            document.querySelector('.winner-list').innerHTML = '';
+        });
+        var nameList = ['albert', 'bob', 'luis', 'eric'];
+
+        /* ================ User define array items ========================================= */
+        var emptyList = [];
+        const btnShowFood = document.querySelector('.btn-display-food');
+        const btnWinnerFood = document.querySelector('.btn-winner-food');
+        const btnResetFood = document.querySelector('.btn-reset-food');
+        const btnSubmit = document.querySelector('.btn-submit');
+        const inputArea = document.querySelector('.input-area');
+
+        inputArea.addEventListener('keyup', (e) => {
+            if(e.key === 'Enter') {
+                emptyList.push(inputArea.value);
+                inputArea.value = '';
+                displayFoodList();
+            }
+        });
+        btnSubmit.addEventListener('click', () => {
+            emptyList.push(inputArea.value);
+            inputArea.value = '';
+            displayFoodList();
+        });
+        btnShowFood.addEventListener('click', displayFoodList);
+        btnWinnerFood.addEventListener('click', () => {
+            let winnerFood = emptyList[Math.floor(Math.random() * emptyList.length)];
+            document.querySelector('.food-choice-list').innerHTML = winnerFood;
+        });
+        btnResetFood.addEventListener('click', () => {
+            emptyList = [];
+            inputArea.value = '';
+            document.querySelector('.food-list').innerHTML = '';
+            document.querySelector('.food-choice-list').innerHTML = '';
+        });
+
+        function displayFoodList() {
+            document.querySelector('.food-list').innerHTML = emptyList;
+        }
+        /* =================================================================================== */
+    </script>
+
+
+    
+</body>
+</html>

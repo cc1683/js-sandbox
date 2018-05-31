@@ -4,6 +4,8 @@
 - [ ] javascript events
 - [ ] use javascript event to trigger element's style
 - [ ] set duration/time 
+- [x] javascript random
+- [x] random food small app
 
 # Difference between **var** and **let** #
 ---
@@ -182,6 +184,19 @@ var removedNameList = nameList.splice(pos, 2);// pos = start index, 2 = defines 
 console.log(nameList); // albert, dolly, eric
 console.log(removedNameList); // bob, carl
 ```
+
+## Web Events ##
+[Reference](https://developer.mozilla.org/en-US/docs/Web/Events)
+
+## Random ##
+get a random item from an array
+```javascript
+var nameList = ['roy', 'bob', 'john', 'adam'];
+var random = nameList[Math.floor(Math.random() * nameList.length)];
+console.log(random);
+```
+
+
 
 
 
