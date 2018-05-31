@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap-material-design.min.css">
-    <title>JS Test - Random</title>
+    <title>JS - Random</title>
 </head>
 <body>
-    <div class="container p-3 m-3">
+    <div class="container">
         <div class="row">
-            <div class="col text-center justify-content-center">
-                Javascript Random
+            <div class="col text-center p-3 m-3">
+                <h1>Javascript Random</h1>
             </div>
         </div>
     </div>
 
-    <div class="container p-3 m-3">
+    <div class="container">
         <div class="row">
-            <div class="col text-center justify-content-center">
+            <div class="col text-center p-3 m-3">
                 <p>Predefined array items</p>
                 <div class="name-list"></div>
                 <button class="btn btn-raised btn-secondary btn-display">Display Array</button>
@@ -26,13 +26,13 @@
                 <button class="btn btn-raised btn-info btn-winner">Winner</button>
                 <button class="btn btn-raised btn-danger btn-reset">Reset</button>
             </div>
+
             <div class="col text-center justify-content-center">
                 <p>User define array items</p>
                 <label for="inputFood"></label>
                 <input class="input-area" type="text" name="inputFood">
                 <button class="btn btn-raised btn-primary btn-submit">Submit</button>
                 <div>Food in cart: <p class="food-list"></p></div>
-                <button class="btn btn-raised btn-secondary btn-display-food">Display Array</button>
                 <div class="food-choice-list"></div>
                 <button class="btn btn-raised btn-info btn-winner-food">Winner</button>
                 <button class="btn btn-raised btn-danger btn-reset-food">Reset</button>
@@ -62,7 +62,6 @@
 
         /* ================ User define array items ========================================= */
         var emptyList = [];
-        const btnShowFood = document.querySelector('.btn-display-food');
         const btnWinnerFood = document.querySelector('.btn-winner-food');
         const btnResetFood = document.querySelector('.btn-reset-food');
         const btnSubmit = document.querySelector('.btn-submit');
@@ -80,7 +79,6 @@
             inputArea.value = '';
             displayFoodList();
         });
-        btnShowFood.addEventListener('click', displayFoodList);
         btnWinnerFood.addEventListener('click', () => {
             let winnerFood = emptyList[Math.floor(Math.random() * emptyList.length)];
             document.querySelector('.food-choice-list').innerHTML = winnerFood;
