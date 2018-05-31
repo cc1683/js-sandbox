@@ -1,4 +1,6 @@
-### Todo ###
+# Unsort Questions #
+
+## Todo ##
 :sunny: :sunny: :sunny:
 
 - [ ] javascript events
@@ -7,7 +9,7 @@
 - [x] javascript random
 - [x] random food small app
 
-# Difference between **var** and **let** #
+## Difference between **var** and **let** ##
 ---
 **var** is scoped to the nearest function block, **let** is scoped to the nearest enclosing block.
 **var** defines a variable globally, or locally to an entire function regardless of block scope. **let** allows to declare variables that are limited in scope to the block, statement, or expression on which it is used.
@@ -48,7 +50,8 @@ console.log(b); //output: 2;
 ```
 In the example above, the scope of the **var** is the entire enclosing function.
 
-# What is **this** in Javascript? #
+## What is **this** in Javascript? ##
+---
 Simple Demo
 ```javascript
 // Create object
@@ -99,9 +102,10 @@ var e = f.bind({
 });
 console.log(e()); //output: Hola
 ```
-# Lookup table #
-Consider lookup tables instead of switch or if-else
+## Lookup table ##
 ---
+Consider lookup tables instead of switch or if-else
+
 **if-else** statement
 ```javascript
 var name = 'Luis';
@@ -142,7 +146,8 @@ var session = {
 };
 console.log(session[Luis]);
 ```
-# Javascript Array #
+## Javascript Array ##
+---
 1. create an array
 ```javascript
 var colors = ['red', 'green', 'blue'];
@@ -186,18 +191,14 @@ console.log(removedNameList); // bob, carl
 ```
 
 ## Web Events ##
+---
 [Reference](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 ## Random ##
+---
 get a random item from an array
 ```javascript
 var nameList = ['roy', 'bob', 'john', 'adam'];
 var random = nameList[Math.floor(Math.random() * nameList.length)];
 console.log(random);
 ```
-
-
-
-
-
-
