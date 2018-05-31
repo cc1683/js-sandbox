@@ -3,18 +3,18 @@ function varTest() {
     var x = 10;
     if(true) {
         var x = 20; 
-        console.log(x); // output: 20
+        console.log('var value inside block: '+x); // output: 20
     }
-    console.log(x); // output: 20
+    console.log('var value outside block: '+x); // output: 20
 }
 
 function letTest() {
     let x = 10;
     if(!false) {
         let x = 20;
-        console.log(x); // output: 20
+        console.log('let value inside block: '+x); // output: 20
     }
-    console.log(x); // output: 10
+    console.log('let value outside block: '+x); // output: 10
 }
 varTest();
 letTest();
@@ -26,17 +26,17 @@ if(a === 50) {
     var a = 500;
     let b = 1000;
 
-    console.log(a); //output: 10
-    console.log(b); //output: 20
+    console.log(a); //output: 500
+    console.log(b); //output: 1000
 }
-console.log(a); //output: 10;
-console.log(b); //output: 2;
+console.log(a); //output: 500;
+console.log(b); //output: 100;
 
 var x = 'Hello';
 let y = 'World';
-
-console.log(this.x);// output: Hello
-console.log(this.y);// output: undefined
+console.log('set var x = Hello, and set let y = World');
+console.log('value of this.x: '+this.x);// output: Hello
+console.log('value of this.y: '+this.y);// output: undefined
 
 /* ===================================================================== */
 
@@ -97,16 +97,15 @@ console.log(e());// output: Hola
 
 /* ================================================================== */
 // Object
-// let name = 'luis';
-// let age = 24;
 let person = {
     name: 'luis',
     age: 24
 };
+console.log('person object: ');
 console.log(person); // access the person object
 
 // access the properties inside the object
-
+console.log('difference ways to access the properties inside an object: ')
 // 1. Dot notation
 person.name = 'yong chun';
 console.log(person.name);
