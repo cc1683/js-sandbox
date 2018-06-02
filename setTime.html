@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap-material-design.min.css">
+    <title>JS - Set Time</title>
+</head>
+<body onload="changeColor();">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center p-3 m-3">
+                <h1>Javascript set time</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="wrapper col text-center p-3 m-3">
+                <button class="btn btn-success" id="btn-show-alert">
+                    An alert message will show after 2 seconds
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="wrapper col text-center p-3 m-3">
+                <p>A setInterval example from MDN</p>
+                <div id="myBox">
+                    <p>Hello World</p>
+                </div>
+                <button class="btn btn-danger" onclick="stopChangeColor()">Stop</button>
+                <button class="btn btn-info" onclick="restartChangeColor()">Start again</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .wrapper {
+            padding: 0.25rem;
+        }
+    </style>
+    <script src="setTime.js"></script>
+    <script>
+        /// example from MDN
+        var intervalID;
+
+        function changeColor() {
+            intervalID = setInterval(flashText, 1000);
+        }
+
+        function flashText() {
+            var elem = document.getElementById("myBox");
+            elem.style.color = elem.style.color == 'red' ? 'blue' : 'red'
+        }
+
+        function stopChangeColor() {
+            clearInterval(intervalID);
+        }
+
+        function restartChangeColor() {
+            changeColor();
+        }
+    </script>
+    
+</body>
+</html>

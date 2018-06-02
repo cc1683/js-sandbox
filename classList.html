@@ -19,8 +19,14 @@
     <div class="container">
         <div class="row">
             <div class="wrapper col text-center p-3 m-3">
-                <div class="demo-1">
+                <div class="demo" id="demo-1">
                     <p>demo1</p>
+                </div>
+                <div class="demo" id="demo-2">
+                    <p>demo2</p>
+                </div>
+                <div class="demo" id="demo-3">
+                    <p>demo3</p>
                 </div>
             </div>
         </div>
@@ -30,6 +36,9 @@
         <div class="row">
             <div class="col text-center p-3 m-3">
                 <button class="btn btn-raised btn-success" id="btn-demo1">Toggle class on demo1</button>
+                <button class="btn btn-raised btn-info" id="btn-demo2">Add class on demo2</button>
+                <button class="btn btn-raised btn-warning" id="btn-demo2-remove">Remove class on demo2</button>
+                <button class="btn btn-raised btn-primary" id="btn-demo3">Replace class on demo3</button>
             </div>
         </div>
     </div>
@@ -40,10 +49,10 @@
         }
         .wrapper {
             padding: 0.25rem;
-            border: 2px solid #333;
         }
-        .demo-1 {
-            border: 2px solid lightgreen;
+        .demo {
+            display: inline-block;
+            border: 2px solid #333;
             font-size: 1.5rem;
             width: 100px;
         }
@@ -51,6 +60,17 @@
             border: 2px solid rebeccapurple;
             font-size: 0.85rem;
             width: 55px;
+        }
+        .new-demo-2 {
+            padding: 2rem;
+            font-size: 0.75rem;
+        }
+        .new-demo-3 {
+            display: inline-block;
+            border: 2px solid #000;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 100px;
         }
     </style>
     <script src="classList.js"></script>
