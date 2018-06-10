@@ -146,49 +146,6 @@ var session = {
 };
 console.log(session[Luis]);
 ```
-## Javascript Array ##
-
-1. create an array
-```javascript
-var colors = ['red', 'green', 'blue'];
-```
-2. array inside an object
-```javascript
-var objStoreArray = {
-    id: 'a',
-    arrayList = ['red', 'blue', 'green']
-};
-console.log(objStoreArray.arrayList[2]);
-```
-3. access an array item
-```javascript
-console.log(colors); // (3) ["red", "green", "blue"]
-console.log(colors[0]); // green
-console.log(colors[colors.length-1]); //blue
-```
-4. loop over an array
-```javascript
-colors.foreach(color => {
-    console.log(color);
-})
-```
-5. add and remove item
-```javascript
-colors.push('yellow'); // add to the end
-colors.pop(); // remove form the end
-colors.unshift('white')// add to the front
-colors.shift(); // remove from the front
-colors.indexOf('red'); // find the index of an item
-```
-6. remove items from an index position
-```javascript
-var nameList = ['albert', 'bob', 'carl', 'dolly', 'eric'];
-// let say want to remove bob and carl
-var pos = nameList.indexOf('bob'); // 1
-var removedNameList = nameList.splice(pos, 2);// pos = start index, 2 = defines the number of items to be removed
-console.log(nameList); // albert, dolly, eric
-console.log(removedNameList); // bob, carl
-```
 
 ## Web Events ##
 
