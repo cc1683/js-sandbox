@@ -273,3 +273,15 @@ const genDis = nameGender.reduce((total, gen) => (total[gen.gender] ++), {
 });
 
 console.table(genDis);
+
+//EXAMPLE: wrapping things up
+
+const luckyNum = [1,2,3,5,6,7,3,6,546,345,3,234,43,7];
+
+const lucky = luckyNum
+    .map(luc => luc * 4)
+    .filter(luc => luc>10)
+    .sort((a, b) => a-b)
+    .reduce((a, b) => (a+b), 0);
+
+console.log('Lucky number: '+lucky);
