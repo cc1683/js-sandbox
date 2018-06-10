@@ -20,17 +20,17 @@ varTest();
 letTest();
 
 // Another example
-var a = 50;
-var b = 100;
-if(a === 50) {
-    var a = 500;
-    let b = 1000;
+var a = 10;
+var b = 10;
+if(a === 10) {
+    var a = 20;
+    let b = 20;
 
-    console.log(a); //output: 500
-    console.log(b); //output: 1000
+    console.log(a); //output: 20
+    console.log(b); //output: 20
 }
-console.log(a); //output: 500;
-console.log(b); //output: 100;
+console.log(a); //output: 20;
+console.log(b); //output: 10;
 
 var x = 'Hello';
 let y = 'World';
@@ -96,6 +96,7 @@ var e = f.bind({
 console.log(e());// output: Hola
 
 /* ================================================================== */
+
 // Object
 let person = {
     name: 'luis',
@@ -106,17 +107,18 @@ console.log(person); // access the person object
 
 // access the properties inside the object
 console.log('difference ways to access the properties inside an object: ')
+
 // 1. Dot notation
 person.name = 'yong chun';
-console.log(person.name);
+console.log('Dot notation: '+person.name);
 
 // 2. Bracket notation
 person['name'] = 'yong chun';
-console.log(person.name);
+console.log('Bracket notation: '+person.name);
 
 // Array
 let nameList = ['luis', 'yongchun'];
-console.log(nameList);
+console.log('Array: '+nameList);
 
 // Function 
 function greet(name) {
