@@ -7,48 +7,56 @@
     <link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
     <title>JS - Todo App</title>
 </head>
-<body onload="showResult()">
-    <div class="container mt-5">
-        <div class="row text-center justify-content-center" id="header-wrapper">
+<body onload="showStorage()">
+    <div class="container mt-5" id="header-wrapper">
+        <div class="row text-center justify-content-center" >
             <h1>Javascript Simple Todo App</h1>
         </div>
-    </div>
 
-    <div class="container mt-4">
-        <div class="row text-center justify-content-center">
+        <div class="row text-center justify-content-center m-5 p-5">
             <form>
-                <div class="form-row">
-                    <div class="col-7">
-                        <input type="text" class="form-control" id="todo" placeholder="Add todo here: ">
-                    </div>
-                    <div class="col">
-                        <input type="number" class="form-control" id="priority" placeholder="Priority">
-                    </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Add task: </label>
+                    <input type="text" class="form-control" id="todo" placeholder="what do you need to do?">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Priority: </label>
+                    <select class="form-control" id="priority">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <button class="btn btn-raised btn-info" id="btn-add">Add</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <div class="container mt-4">
-        <div class="row text-center justify-content-center" id="result-wrapper">
+    <div class="container mt-5">
+        <h3 class="text-left">Todo Lists: </h3>
+        <div class="row text-center justify-content-center result-list">
             <div class="col text-center">
-                <h3>Todo Lists: </h3>
-                <div id="todoResults"></div>
+                <h5>Tasks: </h5>
+                <div id="todoList"></div>
+            </div>
+
+            <div class="col text-center">
+                <h5>Priority: </h5>
+                <div id="prioList"></div>
             </div>
         </div>
     </div>
     <style>
-        #header-wrapper,#result-wrapper {
+        #header-wrapper {
             padding: 2rem;
             border: 2px solid #dedede;
         }
-        #input-wrapper {
-            padding: 2rem;
-            background-color: #efefef;
-        }
-        #btn-add {
-            margin-left: 20px;
+        form {
+            min-width: 600px;
         }
         .result-list {
             padding: 1.25rem;

@@ -1,53 +1,56 @@
 var btnAdd = document.getElementById("btn-add");
-var todo = document.getElementById("todo");
-var prio = document.getElementById("priority");
+var getTodo = document.getElementById("todo");
+var getPrio = document.getElementById("priority");
 
 
 btnAdd.addEventListener('click', addToStorage);
 
 function addToStorage(e) {
-    if(todo.value.length!=0 && prio.value>0) {
+    if(getTodo.value.length != 0 && getPrio.value) {
 
-        var todoList = {
-            todo: todo.value,
-            priority: prio.value
+        var getTodoList = {
+            todo: getTodo.value,
+            priority: getPrio.value
         };
 
-        if(localStorage.getItem("todoHolder") === null) {
+        if(localStorage.getItem("todoLocalStorage") === null) {
             var todoArray = [];
-            todoArray.push(todoList);
-            localStorage.setItem("todoHolder", JSON.stringify(todoArray));
+            todoArray.push(getTodoList);
+            localStorage.setItem("todoLocalStorage", JSON.stringify(todoArray));
         }else {
-            var todoArray = JSON.parse(localStorage.getItem("todoHolder"));
-            todoArray.push(todoList);
-            localStorage.setItem("todoHolder", JSON.stringify(todoArray));
-
+            var todoArray = JSON.parse(localStorage.getItem("todoLocalStorage"));
+            todoArray.push(getTodoList);
+            localStorage.setItem("todoLocalStorage", JSON.stringify(todoArray));
         }
-        
+        showStorage();
         e.preventDefault();
+
     }else {
-        console.log('data not valid');
+        alert('Your data is no valid, Please try it again.')
         e.preventDefault();
     }
 }
 
-function showResult () {
-    var todoArray = JSON.parse(localStorage.getItem("todoHolder"));
-    var todoResults = document.getElementById("todoResults");
-    var prioResults = document.getElementById("prioResults");
+function showStorage () {
+    var todoArray = JSON.parse(localStorage.getItem("todoLocalStorage"));
+    var todoList = document.getElementById("todoList");
+    var prioList = document.getElementById("prioList");
+
+    todoList.innerHTML = '';
+    prioList.innerHTML = '';
 
 
-    var todoArrayResults = todoArray.forEach(todo => {
-        var todoName = todo.todo;
+    var todoArrayList = todoArray.forEach(todo => {
+        var todoItem = todo.todo;
         var todoPrio = todo.priority;
 
-        todoResults.innerHTML+= '<div class="result-list">'+
-                                '<h3>'+todoName+'<p class="priority-list">'+todoPrio+'</p>'+'</h3>'+
-                                '</div>';
+        todoList.innerHTML+= '<div>'+
+                             '<h3>'+todoItem+'</h3>'+
+                             '</div>';
 
-
+        prioList.innerHTML+='<div>'+
+                            '<h3>'+todoPrio+'</h3>'
+                            '</div>'
     })
-
-    // console.log(todoName);
 }
 
