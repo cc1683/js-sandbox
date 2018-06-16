@@ -1,5 +1,5 @@
 # Javascript Array #
-
+## [Link](https://cc1683.github.io/js-sandbox/javascript-array/)
 1. create an array
 ```javascript
 var colors = ['red', 'green', 'blue'];
@@ -31,6 +31,7 @@ colors.pop(); // remove form the end
 colors.unshift('white')// add to the front
 colors.shift(); // remove from the front
 colors.indexOf('red'); // find the index of an item
+if(colors.includes('red')) {console.log('true')};
 ```
 6. remove items from an index position
 ```javascript
@@ -65,7 +66,7 @@ const compSort = companies.sort((a, b) => a.year>b.year ? 1 : -1);
 
 3. map
 ```javascript
-// get the founder from companies list and form a new array
+// form a new array contains company's founder name
 const compMap = companies.map(company => company.founder);
 ```
 
