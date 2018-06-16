@@ -57,7 +57,7 @@ var nameComp = {
 };
 console.log(nameComp.func());// output: blank 
 
-console.log(this === window);
+console.log(this === window); // true
 var a = 10;
 console.log(window.a);
 
