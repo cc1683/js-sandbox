@@ -1,13 +1,13 @@
 # JavaScript Tutorial for Beginners
 ## [Link](https://cc1683.github.io/js-sandbox/javascript-tutorial-for-beginners)
-### Things covered:
-1. var vs let
-2. this
-3. object
-4. array
-5. function
 
-## Difference between **var** and **let** ##
+## Declarations in JavaScript
+
+**var** declares a variable
+**let** declares a block-scoped, local variable
+**const** declares a block-scoped, **read only** named constant
+
+## Difference between **var** and **let** 
 
 **var** is scoped to the nearest function block, **let** is scoped to the nearest enclosing block.
 **var** defines a variable globally, or locally to an entire function regardless of block scope. **let** allows to declare variables that are limited in scope to the block, statement, or expression on which it is used.

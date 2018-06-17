@@ -1,20 +1,46 @@
-// let VS var
+/* declarations in Javascript */
+
+// EXAMPLE: constant variable
+/*
+const constantData = 10;
+
+function changeConstData() {
+    constantData = 20;
+    console.log(constantData);
+}
+changeConstData(); // NOTE: will get a error message in console [Assignment to a constant variable]
+*/
+
+// EXAMPLE: however, const in Object and Array are not protected
+const colorList = ['red', 'blue', 'yellow'];
+colorList.push('black');
+console.log(colorList);
+
+const carList = {
+    'Honda': 1,
+    'Toyota': 2,
+    'Nissan': 3
+}
+carList.Nissan = 10;
+console.log(carList);
+
+// EXAMPLE: difference between var and let
 function varTest() {
     var x = 10;
     if(true) {
         var x = 20; 
-        console.log('var value inside block: '+x); // output: 20
+        console.log('var value inside block: '+x);
     }
-    console.log('var value outside block: '+x); // output: 20
+    console.log('var value outside block: '+x);
 }
 
 function letTest() {
     let x = 10;
     if(!false) {
         let x = 20;
-        console.log('let value inside block: '+x); // output: 20
+        console.log('let value inside block: '+x);
     }
-    console.log('let value outside block: '+x); // output: 10
+    console.log('let value outside block: '+x);
 }
 varTest();
 letTest();
@@ -26,11 +52,11 @@ if(a === 10) {
     var a = 20;
     let b = 20;
 
-    console.log(a); //output: 20
-    console.log(b); //output: 20
+    console.log(a);
+    console.log(b);
 }
-console.log(a); //output: 20;
-console.log(b); //output: 10;
+console.log(a);
+console.log(b);
 
 var x = 'Hello';
 let y = 'World';
@@ -38,7 +64,34 @@ console.log('set var x = Hello, and set let y = World');
 console.log('value of this.x: '+this.x);// output: Hello
 console.log('value of this.y: '+this.y);// output: undefined
 
-/* ===================================================================== */
+// EXAMPLE: global and local variable in Javascript
+
+var myName = 'luis'; // NOTE: any variable declared outside a function block belongs to global scope
+function callName() {
+    var myName = 'another name';
+    console.log('local variable: '+myName);
+}
+callName();
+console.log('global variable: '+myName);
+
+// EXAMPLE: variable hoisting
+console.log('value of hoistingValue: '+hoistingValue); // NOTE: return undefined
+var hoistingValue = 20;
+
+
+/* ============================================================================================= */
+
+/* data structure and type */
+
+/*
+    boolean
+    null
+    undefined
+    number
+    string
+    symbol
+    object
+*/
 
 // 'this' in javascript
 var nameComp = {
@@ -48,14 +101,6 @@ var nameComp = {
     }
 };
 console.log(nameComp.func()); // output: luis
-
-var nameComp = {
-    name: 'luis',
-    func: () => {
-        return this.name;
-    }
-};
-console.log(nameComp.func());// output: blank 
 
 console.log(this === window); // true
 var a = 10;
@@ -95,7 +140,7 @@ var e = f.bind({
 });
 console.log(e());// output: Hola
 
-/* ================================================================== */
+/* ============================================================================================= */
 
 // Object
 let person = {
