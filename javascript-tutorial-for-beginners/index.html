@@ -72,12 +72,17 @@
 
         function checkInput() {
             result.innerHTML = '';
-            try {
-                if(input.value <= 5) throw 'too low';
-                if(input.value > 10) throw 'too high';
-            }
-            catch(err) {
-                result.innerHTML = err;
+            if(input.value > 5 && input.value <=10) {
+                result.innerHTML = 'is valid';
+            }else {
+                try {
+                    if(input.value == '') throw 'is empty';
+                    if(input.value <= 5) throw 'too low';
+                    if(input.value > 10) throw 'too high';
+                }
+                catch(err) {
+                    result.innerHTML = err;
+                }
             }
         }
     </script>
