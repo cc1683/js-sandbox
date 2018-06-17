@@ -23,6 +23,7 @@ const carList = {
 }
 carList.Nissan = 10;
 console.log(carList);
+console.log('\n');
 
 // EXAMPLE: difference between var and let
 function varTest() {
@@ -133,6 +134,40 @@ console.log(car.special);
 console.log('\n');
 
 /* ========================================================================================= */
+
+/* EXAMPLE: exception error handling */
+try {
+    console.log('start of try runs');
+    errorHere();
+    console.log('end of try runs, -- never reached');
+} catch(err) {
+    console.log('error has occured: '+err);
+} finally{
+    console.log('this is always run, regardless of the try, catch result')
+}
+console.log('...execution continue here');
+console.log('\n');
+
+// EXAMPLE: another example
+let json = '{"age": 20}';
+
+try {
+    let user = JSON.parse(json);
+    if(!user.age) {
+        throw new SyntaxError("imcomplete data: no name");
+    }
+    console.log('no error occured');
+} catch(e) {
+    console.log('Error: '+e);// NOTE: e.name = Syntax Error, e.message = 'imcomplete data: no name'
+}
+console.log('\n');
+
+
+
+
+/* ========================================================================= */
+
+
 
 // 'this' in javascript
 var nameComp = {
