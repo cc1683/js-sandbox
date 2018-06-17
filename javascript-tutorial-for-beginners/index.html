@@ -20,18 +20,33 @@
     <div class="container mt-5">
         <h2>Things covered: </h2>
         <div class="row justify-content-start">
-            <ol>
-                <li>Declaration in Javascript</li>
-                    <ul>
-                        <li>const variable</li>
-                        <li>difference between var and let</li>
-                        <li>variable hoisting</li>
-                    </ul>
-                <li>
-                    Object
-                </li>
-                
-            </ol>
+            <div class="col">
+                <ol>
+                    <li>Declaration in Javascript</li>
+                        <ul>
+                            <li>const variable</li>
+                            <li>difference between var and let</li>
+                            <li>variable hoisting</li>
+                        </ul>
+                    <li>Control flow</li>
+                        <ol>
+                            <li>exception handling statement</li>
+                        </ol>
+                    <li>
+                        Object
+                    </li>   
+                </ol>
+            </div>
+
+            <div class="col text-center">
+                <h2>Demo for exception handling statement</h2>
+                <div>
+                    <label for="text">Enter any number here: </label>
+                    <input type="text" name="text" id="inputField">
+                    <button class="btn btn-raised btn-info" id="checkInput">Submit</button>
+                    <div id="resultField"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -47,5 +62,24 @@
     </style>
 
     <script src="app.js"></script>
+
+    <script>
+        var input = document.getElementById("inputField");
+        var result = document.getElementById("resultField");
+        var btn = document.getElementById("checkInput");
+        
+        btn.addEventListener('click', checkInput);
+
+        function checkInput() {
+            result.innerHTML = '';
+            try {
+                if(input.value <= 5) throw 'too low';
+                if(input.value > 10) throw 'too high';
+            }
+            catch(err) {
+                result.innerHTML = err;
+            }
+        }
+    </script>
 </body>
 </html>

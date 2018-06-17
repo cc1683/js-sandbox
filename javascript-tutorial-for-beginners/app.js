@@ -78,6 +78,8 @@ console.log('global variable: '+myName);
 console.log('value of hoistingValue: '+hoistingValue); // NOTE: return undefined
 var hoistingValue = 20;
 
+console.log('\n');
+
 
 /* ============================================================================================= */
 
@@ -92,6 +94,45 @@ var hoistingValue = 20;
     symbol
     object
 */
+
+/* Object in Javascript */
+
+let person = {
+    name: 'luis',
+    age: 24
+};
+console.log('person object: ');
+console.log(person); // access the person object
+
+// EXAMPLE: access the properties inside the object
+console.log('difference ways to access the properties inside an object: ')
+
+// NOTE: 1. Dot notation
+person.name = 'yong chun';
+console.log('Dot notation: '+person.name);
+
+// NOTE: 2. Bracket notation
+person['name'] = 'yong chun';
+console.log('Bracket notation: '+person.name);
+
+// EXAMPLE: object literals
+var sales = 'Toyota';
+var car = {
+    mycar: 'Saturn',
+    getCar: carTypes('Honda'),
+    special: sales
+}
+function carTypes(car) {
+    if (car === 'Honda'){return car}else{return 'Sorry, we dont sell '+car}
+}
+
+console.log(car.mycar);
+console.log(car.getCar);
+console.log(car.special);
+
+console.log('\n');
+
+/* ========================================================================================= */
 
 // 'this' in javascript
 var nameComp = {
@@ -141,25 +182,6 @@ var e = f.bind({
 console.log(e());// output: Hola
 
 /* ============================================================================================= */
-
-// Object
-let person = {
-    name: 'luis',
-    age: 24
-};
-console.log('person object: ');
-console.log(person); // access the person object
-
-// access the properties inside the object
-console.log('difference ways to access the properties inside an object: ')
-
-// 1. Dot notation
-person.name = 'yong chun';
-console.log('Dot notation: '+person.name);
-
-// 2. Bracket notation
-person['name'] = 'yong chun';
-console.log('Bracket notation: '+person.name);
 
 // Array
 let nameList = ['luis', 'yongchun'];
