@@ -2,16 +2,17 @@
 
 // EXAMPLE: constant variable
 /*
-const constantData = 10;
+    const constantData = 10;
 
-function changeConstData() {
-    constantData = 20;
-    console.log(constantData);
-}
-changeConstData(); // NOTE: will get a error message in console [Assignment to a constant variable]
+    function changeConstData() {
+        constantData = 20;
+        console.log(constantData);
+    }
+    changeConstData(); // NOTE: will get a error message in console [Assignment to a constant variable]
 */
 
 // EXAMPLE: however, const in Object and Array are not protected
+console.log('const in object and array are not protected')
 const colorList = ['red', 'blue', 'yellow'];
 colorList.push('black');
 console.log(colorList);
@@ -117,6 +118,7 @@ person['name'] = 'yong chun';
 console.log('Bracket notation: '+person.name);
 
 // EXAMPLE: object literals
+console.log('object literal: ');
 var sales = 'Toyota';
 var car = {
     mycar: 'Saturn',
@@ -162,12 +164,7 @@ try {
 }
 console.log('\n');
 
-
-
-
 /* ========================================================================= */
-
-
 
 // 'this' in javascript
 var nameComp = {
@@ -215,6 +212,7 @@ var e = f.bind({
     a: 'Hola'
 });
 console.log(e());// output: Hola
+console.log('\n');
 
 /* ============================================================================================= */
 

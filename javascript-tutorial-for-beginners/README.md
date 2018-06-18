@@ -62,7 +62,7 @@ var nameID = {
         return this.name;
     }
 };
-console.log(nameID.id()); //output: luis
+console.log(nameID.id()); // output: luis
 ```
 Arrow function in ES2015 which don't provide their own this binding
 Example:
@@ -70,7 +70,7 @@ Example:
 id: () => {
     return this.name;
 }
-console.log(nameID.id()); // output: blank
+console.log(nameID.id()); // no output
 ```
 In the **global execution context** (outside of any functions), **this** will refers to the **global object**. **this** == **window object**.
 
@@ -107,10 +107,10 @@ console.log(e()); //output: Hola
 
 keywords: **try**, **catch**, **finally**, **throw**
 
-1. try{}   - test a block of code for errors
-2. catch{} - handle the error
-3. throw{} - create custom error
-4. finally{} - execute code after try and catch regardless of the result
+1. **try{}**   - test a block of code for errors
+2. **catch{}** - handle the error
+3. **throw{}** - create custom error
+4. **finally{}** - execute code after try and catch regardless of the result
 
 error object takes 2 properties, **name** and **message**
 
@@ -140,7 +140,6 @@ try {
 } catch(e) {
     console.log('Error: '+e);// NOTE: e.name = Syntax Error, e.message = 'imcomplete data: no name'
 }
-console.log('\n');
 ```
 
 
