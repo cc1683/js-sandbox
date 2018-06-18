@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
-    <title>JS - Todo App</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.css">
+    <title>Javascript Todo App</title>
 </head>
 <body onload="showStorage()">
     <div class="container mt-5" id="header-wrapper">
@@ -16,17 +18,17 @@
         <div class="row text-center justify-content-center m-5 p-5">
             <form>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Add task: </label>
-                    <input type="text" class="form-control" id="todo" placeholder="what do you need to do?">
+                    <label for="todoInput">Add task: </label>
+                    <input type="text" class="form-control" id="todo" name="todoInput" placeholder="what do you need to do?">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Priority: </label>
-                    <select class="form-control" id="priority">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <label for="prioInput">Priority: </label>
+                    <select class="form-control" name="prioInput" id="priority">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -38,18 +40,14 @@
 
     <div class="container mt-5">
         <h3 class="text-left">Todo Lists: </h3>
-        <div class="row text-center justify-content-center result-list">
-            <div class="col text-center">
-                <h5>Tasks: </h5>
+        <div class="row result-list">
+            <div class="col text-left">
+                <h3>Tasks: </h3>
                 <div id="todoList"></div>
-            </div>
-
-            <div class="col text-center">
-                <h5>Priority: </h5>
-                <div id="prioList"></div>
             </div>
         </div>
     </div>
+
     <style>
         #header-wrapper {
             padding: 2rem;
@@ -61,10 +59,16 @@
         .result-list {
             padding: 1.25rem;
             margin: 1rem;
-            border: 2px solid #dedede;
-            max-width: 600px;
+            border: 1px solid #dedede;
+            max-width: 1200px;
+        }
+        #todoList {
+            margin: 2rem;
         }
     </style>
+
     <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+
 </body>
 </html>
