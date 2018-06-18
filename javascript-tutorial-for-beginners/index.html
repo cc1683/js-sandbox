@@ -18,9 +18,9 @@
     </div>
 
     <div class="container mt-5">
-        <h2>Things covered: </h2>
-        <div class="row justify-content-start">
-            <div class="col">
+        <div class="row justify-content-start grid">
+            <div class="grid-item">
+                <h2>Things covered: </h2>
                 <ol>
                     <li>Declaration in Javascript</li>
                         <ul>
@@ -38,12 +38,13 @@
                 </ol>
             </div>
 
-            <div class="col text-center">
+            <div class="grid-item text-center">
                 <h2>Demo for exception handling statement</h2>
                 <div>
                     <label for="text">Enter any number here: </label>
                     <input type="text" name="text" id="inputField">
                     <button class="btn btn-raised btn-info" id="checkInput">Submit</button>
+                    <button class="btn btn-raised btn-warning" id="clearInput">Clear</button>
                     <div id="resultField"></div>
                 </div>
             </div>
@@ -59,16 +60,24 @@
             padding: 2rem;
             border: 0.8px solid #333;
         }
+        .grid-item {
+            padding: 1.25rem;
+            border: 0.8px solid #dedede;
+            margin-bottom: 10px;
+        }
     </style>
-
-    <script src="app.js"></script>
 
     <script>
         var input = document.getElementById("inputField");
         var result = document.getElementById("resultField");
         var btn = document.getElementById("checkInput");
+        var clear = document.getElementById("clearInput");
         
         btn.addEventListener('click', checkInput);
+        clear.addEventListener('click', () => {
+            input.value = '';
+            result.innerHTML = '';
+        });
 
         function checkInput() {
             result.innerHTML = '';
@@ -85,6 +94,16 @@
                 }
             }
         }
+    </script>
+
+    <script src="app.js"></script>
+    <script src="../js/masonry.js"></script>
+
+    <script>
+        var msnry = new Masonry('.grid', {
+            itemSelector: '.grid-item',
+            gutter: 10,
+        })
     </script>
 </body>
 </html>
