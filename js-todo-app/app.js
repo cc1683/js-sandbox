@@ -22,7 +22,7 @@ function addToStorage(e) {
             localStorage.setItem("todoLocalStorage", JSON.stringify(todoArray));
         }
         showStorage();
-        toastr.success('Todo add successfully!');
+        toastr.success('Todo added successfully!');
         getTodo.value = '';
         e.preventDefault();
 
@@ -32,7 +32,7 @@ function addToStorage(e) {
     }
 }
 
-function showStorage () {
+function showLocalStorage () {
     var todoArray = JSON.parse(localStorage.getItem("todoLocalStorage"));
     var todoList = document.getElementById("todoList");
 
@@ -57,6 +57,6 @@ function deleteTodo(todo) {
     }
     toastr.warning('Todo deleted!');
     localStorage.setItem("todoLocalStorage", JSON.stringify(todoArray));
-    showStorage();
+    showLocalStorage();
 }
 
