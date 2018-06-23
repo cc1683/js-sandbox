@@ -21,14 +21,15 @@ function addToStorage(e) {
             todoArray.push(getTodoList);
             localStorage.setItem("todoLocalStorage", JSON.stringify(todoArray));
         }
-        showStorage();
+        e.preventDefault();
+        showLocalStorage();
         toastr.success('Todo added successfully!');
         getTodo.value = '';
-        e.preventDefault();
+        
 
     }else {
-        toastr.error('Data is no valid, please try again');
         e.preventDefault();
+        toastr.error('Data is no valid, please try again');
     }
 }
 
@@ -42,7 +43,7 @@ function showLocalStorage () {
         var todoItem = todo.todo;
         var todoPrio = todo.priority;
 
-        todoList.innerHTML+= '<div class="card mt-3">'+
+        todoList.innerHTML+= '<div class="grid-item card m-1">'+
                              '<div class="card-body text-dark">'+
                              '<h5>'+ todoItem +'</h5>'+'<p>'+'Priority: '+ todoPrio +'</p>'+ '<button class="btn btn-sm btn-raised btn-warning" id="deleteBtn" onclick="deleteTodo(\''+todoItem+'\')">' + 'Delete' + '</button>'+
                              '</div>'+
@@ -61,4 +62,3 @@ function deleteTodo(todo) {
     localStorage.setItem("todoLocalStorage", JSON.stringify(todoArray));
     showLocalStorage();
 }
-

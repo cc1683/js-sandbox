@@ -70,10 +70,19 @@
             border-radius: 10px;
         }
         #todoList {
+            display: grid;
+            grid-template-columns: auto auto;
             margin: 2rem;
         }
         #deleteBtn {
             float: right;
+        }
+
+        /* Media Query */
+        @media(max-width: 768px) {
+            #todoList {
+                grid-template-columns: auto;
+            }
         }
     </style>
 
