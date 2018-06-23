@@ -22,7 +22,7 @@ function addToStorage(e) {
             localStorage.setItem("todoLocalStorage", JSON.stringify(todoArray));
         }
         showStorage();
-        toastr.success('Todo add successfully!');
+        toastr.success('Todo added successfully!');
         getTodo.value = '';
         e.preventDefault();
 
@@ -42,8 +42,10 @@ function showStorage () {
         var todoItem = todo.todo;
         var todoPrio = todo.priority;
 
-        todoList.innerHTML+= '<div>'+
-                             '<h5>'+ todoItem +'<button class="btn btn-sm btn-raised btn-danger mx-3" onclick="deleteTodo(\''+todoItem+'\')">' + 'Delete' + '</button>'+'Priority: '+ todoPrio +'</h5>'+ 
+        todoList.innerHTML+= '<div class="card mt-3">'+
+                             '<div class="card-body text-dark">'+
+                             '<h5>'+ todoItem +'</h5>'+'<p>'+'Priority: '+ todoPrio +'</p>'+ '<button class="btn btn-sm btn-raised btn-warning" id="deleteBtn" onclick="deleteTodo(\''+todoItem+'\')">' + 'Delete' + '</button>'+
+                             '</div>'+
                              '</div>';
     })
 }
