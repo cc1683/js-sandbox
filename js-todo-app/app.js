@@ -32,7 +32,7 @@ function addToStorage(e) {
     }
 }
 
-function showStorage () {
+function showLocalStorage () {
     var todoArray = JSON.parse(localStorage.getItem("todoLocalStorage"));
     var todoList = document.getElementById("todoList");
 
@@ -59,6 +59,6 @@ function deleteTodo(todo) {
     }
     toastr.warning('Todo deleted!');
     localStorage.setItem("todoLocalStorage", JSON.stringify(todoArray));
-    showStorage();
+    showLocalStorage();
 }
 
