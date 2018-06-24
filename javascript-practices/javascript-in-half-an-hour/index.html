@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/bootstrap-material-design.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
+    <title>Javascript Practice - Wishlist</title>
+</head>
+<body onload="checkItem()">
+    <div class="container mt-5">
+        <div class="row justify-content-start">
+            <h1>Javascript Simple Wishlist</h1>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row justify-content-start text-left">
+            <div class="col-auto">
+                <h3 id="headline-text">Click a list item to replace this text</h3>
+                <div class="m-5 p-5">
+                    <div class="form-group">
+                        <label for="item">Your Wishlist: </label>
+                        <input type="text" class="form-control" id="itemInput" name="item" placeholder="Add item">
+                    </div>
+                    <button class="btn btn-raised btn-success" id="btn-add">Add</button>
+                </div>
+                <div>
+                    <ul id="item-list">
+                        <li>First</li>
+                        <li>Second</li>
+                        <li>Third</li>
+                        <li>Fourth</li>
+                        <li>Fifth</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: 'Tajawal', sans-serif;
+        }
+        li {
+            list-style: square;
+            padding: 0.75rem;
+            cursor: pointer;
+        }
+        .form-group {
+            min-width: 500px;
+        }
+        .selected {
+            background-color: crimson;
+            color: #fff;
+            border-radius: 10px;
+        }
+    </style>
+
+    <script src="app.js"></script>
+    
+</body>
+</html>
