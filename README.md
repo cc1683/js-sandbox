@@ -1,13 +1,27 @@
-# Unsort Questions #
-## [Link](https://cc1683.github.io/js-sandbox/)
+# Javascript | Sandbox #
+## Check the result on console
+
+1. [Javascript tutorial for beginner](https://cc1683.github.io/js-sandbox/javascript-tutorial-for-beginners/)
+2. [Javascript array](https://cc1683.github.io/js-sandbox/javascript-array)
+3. [Javascript callback](https://cc1683.github.io/js-sandbox/javascript-callback)
+4. [Javascript event](https://cc1683.github.io/js-sandbox/javascript-event)
+5. [Javascript trigger](https://cc1683.github.io/js-sandbox/javascript-trigger)
+6. [Javascript random](https://cc1683.github.io/js-sandbox/javascript-random)
+7. [Javascript timer](https://cc1683.github.io/js-sandbox/javascript-timer)
+8. [Javascript lookup table](https://cc1683.github.io/js-sandbox/javascript-lookup_table)
+9. [Javascript todo app](https://cc1683.github.io/js-sandbox/javascript-todo-app)
+10. [Javascript wishlist](https://cc1683.github.io/js-sandbox/javascript-practices/javascript-in-half-an-hour)
+
 ## Todo ##
 :sunny: :sunny: :sunny:
 
 - [x] javascript events
 - [x] use javascript event to trigger element's style
-- [ ] set duration/time 
+- [x] set duration/time 
 - [x] javascript random
 - [x] random food small app
+
+# General Documentation
 
 
 ## Lookup table ##
