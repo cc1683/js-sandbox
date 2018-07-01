@@ -9,7 +9,7 @@
 6. [Javascript random](https://cc1683.github.io/js-sandbox/javascript-random)
 7. [Javascript timer](https://cc1683.github.io/js-sandbox/javascript-timer)
 8. [Javascript lookup table](https://cc1683.github.io/js-sandbox/javascript-lookup_table)
-9. [Javascript todo app](https://cc1683.github.io/js-sandbox/javascript-todo-app)
+9. [Javascript todo app](https://cc1683.github.io/js-sandbox/js-todo-app)
 10. [Javascript wishlist](https://cc1683.github.io/js-sandbox/javascript-practices/javascript-in-half-an-hour)
 
 ## Todo ##
