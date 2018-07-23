@@ -10,7 +10,7 @@
 - [Javascript timer](https://cc1683.github.io/js-sandbox/javascript-timer)
 - [Javascript lookup table](https://cc1683.github.io/js-sandbox/javascript-lookup_table)
 - [Javascript todo app](https://cc1683.github.io/js-sandbox/js-todo-app)
-- [Javascript wishlist](https://cc1683.github.io/js-sandbox/javascript-practices/javascript-in-half-an-hour)
+- [Javascript wishlist](https://cc1683.github.io/js-sandbox/javascript-wishlist)
 
 ## Todo ##
 :sunny: :sunny: :sunny:
