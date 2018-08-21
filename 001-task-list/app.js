@@ -1,9 +1,11 @@
 let task = document.getElementById('task');
 let segments = document.getElementById('segments');
+let filter = document.getElementById('filter');
 segments.style.display = 'none';
 
 document.querySelector('.submit').addEventListener('click', addList);
 segments.addEventListener('click', removeList);
+filter.addEventListener('keyup', filterList);
 
 function addList() {
     let task = document.getElementById('task');
@@ -29,11 +31,28 @@ function addList() {
 function removeList(e) {
     let segment = document.getElementsByClassName('segment');
     if(e.target.parentElement.classList.contains('delete')) {
-        e.target.parentElement.parentElement.remove();
-        if(segment.length == 0) {
-            segments.style.display = 'none';
+        if(confirm('Are you sure?')) {
+            e.target.parentElement.parentElement.remove();
+            if(segment.length == 0) {
+                segments.style.display = 'none';
+            }
         }
     }
+}
+
+function filterList(e) {
+    const text = e.target.value.toLowerCase();
+
+    document.querySelectorAll('.segment').forEach(function(task) {
+        const item = task.firstChild.textContent;
+        if(item.toLowerCase().indexOf(text) != -1){
+            segments.style.display = 'block';
+            task.style.display = 'block';
+        }else {
+            segments.style.display = 'none';
+            task.style.display = 'none';
+        }
+    })
 }
 
  
