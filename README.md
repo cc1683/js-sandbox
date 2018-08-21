@@ -1,1 +1,1 @@
-## Javascript Sandbox :memo:
+## JavaScript Sandbox :memo:
