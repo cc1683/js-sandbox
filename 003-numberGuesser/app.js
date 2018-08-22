@@ -9,6 +9,7 @@ const maxNum = document.querySelector('.max-num');
 const guessBtn = document.querySelector('#guess-btn');
 const guessInput = document.querySelector('#guess-input');
 const message = document.querySelector('.message');
+const hint = document.querySelector('.hint');
 
 minNum.textContent = min;
 maxNum.textContent = max;
@@ -20,6 +21,7 @@ game.addEventListener('mousedown', (e) => {
 })
 
 guessBtn.addEventListener('click', () => {
+    console.log(winningNum);
     let guess = parseInt(guessInput.value);
 
     if(isNaN(guess) || guess < min || guess > max) {
@@ -27,12 +29,14 @@ guessBtn.addEventListener('click', () => {
     }
 
     if(guess === winningNum) {
+        hint.textContent = '';
         gameOver(true, `${winningNum} is correct! You Won!`);
     } else {
         guessesLeft -= 1;
         if(guessesLeft == 0) {
             gameOver(false, `Game Over! Correct number was ${winningNum}!`);
         } else {
+            getHint(guess, winningNum);
             guessInput.style.borderColor = 'red';
             guessInput.value = '';
             setMessage(`Wrong Number! ${guessesLeft} guesses left`, 'red');
@@ -60,4 +64,18 @@ function gameOver(won, msg) {
 
 function getRandomNum(min, max) {
     return (Math.floor(Math.random() * (max - min  + 1) + min));
+}
+
+function getHint(guessNum, correctNum) {
+    if(guessNum < correctNum) {
+        setHint('low');
+    } else {
+        setHint('high');
+    }
+}
+
+function setHint(level) {
+    let different;
+    level === 'low' ? different = 'low' : different= 'high';
+    hint.textContent = `Too ${different} !`;
 }
