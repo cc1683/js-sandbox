@@ -26,22 +26,25 @@ guessBtn.addEventListener('click', () => {
 
     if(isNaN(guess) || guess < min || guess > max) {
         setMessage(`Please enter a number between ${min} and ${max}`, 'red');
-    }
+        guessBtn.value = 'Play Again';
+        guessBtn.className += 'play-again';
 
-    if(guess === winningNum) {
-        hint.textContent = '';
-        lastGuess.textContent = '';
-        gameOver(true, `${winningNum} is correct! You Won!`);
     } else {
-        guessesLeft -= 1;
-        if(guessesLeft == 0) {
-            gameOver(false, `Game Over! Correct number was ${winningNum}!`);
+        if(guess === winningNum) {
+            hint.textContent = '';
+            lastGuess.textContent = '';
+            gameOver(true, `${winningNum} is correct! You Won!`);
         } else {
-            getHint(guess, winningNum);
-            lastGuess.textContent = `Your last guess number was: ${guess}`;
-            guessInput.style.borderColor = 'red';
-            guessInput.value = '';
-            setMessage(`Wrong Number! ${guessesLeft} guesses left`, 'red');
+            guessesLeft -= 1;
+            if(guessesLeft == 0) {
+                gameOver(false, `Game Over! Correct number was ${winningNum}!`);
+            } else {
+                getHint(guess, winningNum);
+                lastGuess.textContent = `Your last guess number was: ${guess}`;
+                guessInput.style.borderColor = 'red';
+                guessInput.value = '';
+                setMessage(`Wrong Number! ${guessesLeft} guesses left`, 'red');
+            }
         }
     }
 })
