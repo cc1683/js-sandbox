@@ -10,6 +10,7 @@ const guessBtn = document.querySelector('#guess-btn');
 const guessInput = document.querySelector('#guess-input');
 const message = document.querySelector('.message');
 const hint = document.querySelector('.hint');
+const lastGuess = document.querySelector('.last-guess');
 
 minNum.textContent = min;
 maxNum.textContent = max;
@@ -21,7 +22,6 @@ game.addEventListener('mousedown', (e) => {
 })
 
 guessBtn.addEventListener('click', () => {
-    console.log(winningNum);
     let guess = parseInt(guessInput.value);
 
     if(isNaN(guess) || guess < min || guess > max) {
@@ -30,6 +30,7 @@ guessBtn.addEventListener('click', () => {
 
     if(guess === winningNum) {
         hint.textContent = '';
+        lastGuess.textContent = '';
         gameOver(true, `${winningNum} is correct! You Won!`);
     } else {
         guessesLeft -= 1;
@@ -37,6 +38,7 @@ guessBtn.addEventListener('click', () => {
             gameOver(false, `Game Over! Correct number was ${winningNum}!`);
         } else {
             getHint(guess, winningNum);
+            lastGuess.textContent = `Your last guess number was: ${guess}`;
             guessInput.style.borderColor = 'red';
             guessInput.value = '';
             setMessage(`Wrong Number! ${guessesLeft} guesses left`, 'red');
