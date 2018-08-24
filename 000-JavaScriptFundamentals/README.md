@@ -42,3 +42,43 @@ Initial value: 10
 var value inside a block scope: 20
 var value inside a function scope: 20
 ```
+- Reassign value
+
+**const** means constant, we cannot reassign a new value to it. However, we still able to add more item into a **const** array or object.
+```javascript
+const num1 = 10;
+
+function changeConst() {
+    num1 = 20;
+    return num1;
+}
+```
+```
+Output:
+Uncaught TypeError: Assignment to constant variable.
+```
+
+```javascript
+const names = ['albert', 'bob', 'alice'];
+
+function addToConstArray(names) {
+    names.push('alex');
+    return names;
+}
+
+const user1 = {
+    id: 1,
+    username: 'testuser1',
+    major: 'hardware'
+}
+
+function addToConstObject(user) {
+    user.phone = '012345678';
+    return user;
+}
+```
+```
+Output: 
+(4) ["albert", "bob", "alice", "alex"]
+{id: 1, username: "testuser1", major: "hardware", phone: "012345678"}
+```

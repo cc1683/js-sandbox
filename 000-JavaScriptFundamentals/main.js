@@ -26,3 +26,34 @@ function showVar() {
 }
 
 showVar();
+
+const num1 = 10;
+
+function changeConst() {
+    num1 = 20;
+    return num1;
+}
+
+// changeConst(); //! Uncaught TypeError: Assignment to constant variable.
+
+const names = ['albert', 'bob', 'alice'];
+
+function addToConstArray(names) {
+    names.push('alex');
+    return names;
+}
+
+console.log(addToConstArray(names));
+
+const user1 = {
+    id: 1,
+    username: 'testuser1',
+    major: 'hardware'
+}
+
+function addToConstObject(user) {
+    user.phone = '012345678';
+    return user;
+}
+
+console.log(addToConstObject(user1));
