@@ -37,6 +37,8 @@ guessBtn.addEventListener('click', () => {
         } else {
             guessesLeft -= 1;
             if(guessesLeft == 0) {
+                hint.textContent = '';
+                lastGuess.textContent = '';
                 gameOver(false, `Game Over! Correct number was ${winningNum}!`);
             } else {
                 getHint(guess, winningNum);
