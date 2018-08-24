@@ -65,14 +65,11 @@ console.log(addToConstObject(user1));
 //* Array
 const demoUI= document.getElementById('demo-content-wrapper');
 
-document.getElementById('array-demo').addEventListener('click', arrayDemo);
-document.querySelector('.demo-list').addEventListener('mousedown', (e) => {
-    if(e.target.classList.contains('reload-windows')) {
-        window.location.reload();
-    }
-})
+document.getElementById('array-demo-1').addEventListener('click', arrayDemoOne);
+document.getElementById('array-demo-2').addEventListener('click', arrayDemoTwo);
 
-function arrayDemo() {
+//! Array Demo 1
+function arrayDemoOne() {
     let memberList = [];
     let count = prompt('How many team member(s) you have?');
     count = Number(count);
@@ -93,11 +90,7 @@ function arrayDemo() {
             }
         }
 
-        const demoTitle = document.createElement('p');
-        demoTitle.className = 'ui small header';
-        demoTitle.textContent = 'Team Member List';
-        demoUI.style.display = 'block';
-        demoUI.appendChild(demoTitle);
+        createDemoContainer('Team Member List');
 
         const arrayList = document.createElement('ul');
 
@@ -110,8 +103,72 @@ function arrayDemo() {
 
         demoUI.appendChild(arrayList);
 
-        document.getElementById('array-demo').value = 'Clear';
-        document.getElementById('array-demo').classList += ' reload-windows';
-        document.getElementById('array-demo').classList.replace("grey", "red");
+        createReloadBtn('array-demo-1');
     }
 }
+
+//! Array Demo 2
+function arrayDemoTwo() {
+    createReloadBtn('array-demo-2');
+    createDemoContainer('Item list');
+
+    const itemInputWrapper = document.createElement('div');
+    itemInputWrapper.className = 'ui input';
+
+    const itemInput = document.createElement('input');
+    itemInput.setAttribute('type', 'text');
+    itemInput.setAttribute('placeholder', 'Item name');
+
+    const addBtn = document.createElement('input');
+    addBtn.setAttribute('type', 'submit');
+    addBtn.className = 'ui small black button right floated add';
+    addBtn.value = 'Add';
+
+    itemInputWrapper.appendChild(itemInput);
+    itemInputWrapper.appendChild(addBtn);
+    demoUI.appendChild(itemInputWrapper);
+
+    demoUI.addEventListener('mousedown', (e) => {
+        if(e.target.classList.contains('add') && itemInput.value != '') {
+            const list = document.createElement('div');
+            list.className = 'ui list';
+
+            const listItem = document.createElement('div');
+            listItem.className = 'item';
+
+            listItem.appendChild(document.createTextNode(itemInput.value));
+            list.appendChild(listItem);
+
+            itemInput.value = '';
+
+            demoUI.appendChild(list);
+        } else if(e.target.classList.contains('add') && itemInput.value == '') {
+            alert('Please enter something!');
+        }
+    })
+}
+
+//! Demo Title
+function createDemoContainer(title) {
+    const demoTitle = document.createElement('p');
+    demoTitle.className = 'ui small header';
+    demoTitle.textContent = title;
+    demoUI.style.display = 'block';
+
+    let container = demoUI.appendChild(demoTitle);
+    return container;
+}
+
+//! Reload Button
+function createReloadBtn(elem) {
+    document.getElementById(elem).value = 'Clear All';
+    document.getElementById(elem).classList += ' windows-reload';
+    document.getElementById(elem).classList.replace("grey", "red");
+}
+
+//! Windows Reload
+document.querySelector('.demo-list').addEventListener('mousedown', (e) => {
+    if(e.target.classList.contains('windows-reload')) {
+        window.location.reload();
+    }
+})
