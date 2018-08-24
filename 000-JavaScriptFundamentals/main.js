@@ -66,6 +66,11 @@ console.log(addToConstObject(user1));
 const demoUI= document.getElementById('demo-content-wrapper');
 
 document.getElementById('array-demo').addEventListener('click', arrayDemo);
+document.querySelector('.demo-list').addEventListener('mousedown', (e) => {
+    if(e.target.classList.contains('reload-windows')) {
+        window.location.reload();
+    }
+})
 
 function arrayDemo() {
     let memberList = [];
@@ -104,5 +109,9 @@ function arrayDemo() {
         }
 
         demoUI.appendChild(arrayList);
+
+        document.getElementById('array-demo').value = 'Clear';
+        document.getElementById('array-demo').classList += ' reload-windows';
+        document.getElementById('array-demo').classList.replace("grey", "red");
     }
 }
