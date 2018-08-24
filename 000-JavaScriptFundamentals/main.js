@@ -22,7 +22,7 @@ function showVar() {
         var var1 = 20;
         console.log(`var value inside a block scope: ${var1}`);
     }
-    console.log(`var value inside a function scope: ${var1}`)
+    console.log(`var value inside a function scope: ${var1}`);
 }
 
 showVar();
@@ -65,8 +65,8 @@ console.log(addToConstObject(user1));
 //* Array
 const demoUI= document.getElementById('demo-content-wrapper');
 
-document.getElementById('array-demo-1').addEventListener('click', arrayDemoOne);
-document.getElementById('array-demo-2').addEventListener('click', arrayDemoTwo);
+document.getElementById('demo-1').addEventListener('click', arrayDemoOne);
+document.getElementById('demo-2').addEventListener('click', arrayDemoTwo);
 
 //! Array Demo 1
 function arrayDemoOne() {
@@ -103,13 +103,13 @@ function arrayDemoOne() {
 
         demoUI.appendChild(arrayList);
 
-        createReloadBtn('array-demo-1');
+        createReloadBtn('demo-1');
     }
 }
 
 //! Array Demo 2
 function arrayDemoTwo() {
-    createReloadBtn('array-demo-2');
+    createReloadBtn('demo-2');
     createDemoContainer('Item list');
 
     const itemInputWrapper = document.createElement('div');
@@ -135,6 +135,7 @@ function arrayDemoTwo() {
 
             const listItem = document.createElement('div');
             listItem.className = 'item';
+            listItem.innerHTML = '<i class="far fa-list-alt"></i> ';
 
             listItem.appendChild(document.createTextNode(itemInput.value));
             list.appendChild(listItem);
