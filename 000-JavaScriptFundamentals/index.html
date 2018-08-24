@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <title>JavaScript Fundamentals</title>
     <style>
         #content-wrapper {
-            padding-top: 20vh;
+            padding-top: 10vh;
+        }
+        #demo-results {
+            display: none;
+        }
+        li {
+            list-style: none;
         }
     </style>
 </head>
@@ -16,14 +23,20 @@
     <div class="ui container" id="content-wrapper">
         <h1>JavaScript Fundamentals</h1>
         <p class="ui tiny header">Author: Luis yChun</p>
-        <button class="ui button">Markdown</button>
-        <button class="ui button">Source Code</button>
+        <div class="ui buttons">
+            <button class="ui button">Markdown</button>
+            <div class="or"></div>
+            <button class="ui black button">Source Code</button>
+        </div>
+        <div class="ui divider"></div>
+        <h2 class="small header">Menu</h2>
         <div class="ui list">
             <div class="item">
                 <div class="header">Variable Declaration</div>
             </div>
             <div class="item">
                 <div class="header">Array</div>
+                <button class="ui small grey button" id="demo-dynamic-array">Dynamic Array Demo</button>
             </div>
             <div class="item">
                 <div class="header">Object</div>
@@ -32,6 +45,8 @@
                 <div class="header">Function</div>
             </div>
         </div>
+
+        <div class="ui segment" id="demo-results"></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>

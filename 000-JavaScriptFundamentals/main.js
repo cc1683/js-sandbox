@@ -57,3 +57,62 @@ function addToConstObject(user) {
 }
 
 console.log(addToConstObject(user1));
+
+
+//? ============================================================================================================= ?//
+
+
+//* Array
+const demoUI= document.getElementById('demo-results');
+const hideBtn = document.createElement('button');
+
+hideBtn.className = 'ui small red button right floated hide';
+hideBtn.textContent = 'Hide';
+demoUI.appendChild(hideBtn);
+
+document.getElementById('demo-dynamic-array').addEventListener('click', dynamicArrayDemo);
+document.querySelector('.hide').addEventListener('click', () => {
+    demoUI.style.display = 'none';
+})
+
+function dynamicArrayDemo() {
+    let memberList = [];
+    let count = prompt('How many team member(s) you have?');
+    count = Number(count);
+
+    if(isNaN(count) || count <=0) {
+        alert('Input No Valid!');
+        return false;
+    } else {
+        for(let i=0; i<count; i++) {
+            let membersName = prompt(`#${i+1} Members\' Name:`);
+
+            if(membersName.length != 0) {
+                memberList.push(membersName);
+                membersName = '';
+            } else {
+                alert('Input No Valid!');
+                return false;
+            }
+        }
+
+        const demoTitle = document.createElement('p');
+        demoTitle.className = 'ui small header';
+        demoTitle.textContent = 'Team Member List';
+        demoUI.style.display = 'block';
+        demoUI.appendChild(demoTitle);
+
+        const dynamicArrayList = document.createElement('ul');
+
+        for(let u=0; u<memberList.length; u++) {
+            const dynamicArrayResults = document.createElement('li');
+            dynamicArrayResults.innerHTML = `<i class="fas fa-user"></i> `;
+            dynamicArrayResults.appendChild(document.createTextNode(memberList[u]));
+            dynamicArrayList.appendChild(dynamicArrayResults);
+        }
+
+        demoUI.appendChild(dynamicArrayList);
+    }
+}
+
+

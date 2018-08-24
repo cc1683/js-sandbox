@@ -82,3 +82,5 @@ Output:
 (4) ["albert", "bob", "alice", "alex"]
 {id: 1, username: "testuser1", major: "hardware", phone: "012345678"}
 ```
+
+## Array
