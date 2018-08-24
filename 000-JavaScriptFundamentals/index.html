@@ -11,7 +11,7 @@
         #content-wrapper {
             padding-top: 10vh;
         }
-        #demo-results {
+        #demo-content-wrapper {
             display: none;
         }
         li {
@@ -28,6 +28,13 @@
             <div class="or"></div>
             <button class="ui black button">Source Code</button>
         </div>
+        <div class="ui negative message transition">
+            <i class="close icon"></i>
+            <div class="header">
+                Notice.
+            </div>
+            <p>The demo part still under development.</p>
+        </div>
         <div class="ui divider"></div>
         <h2 class="small header">Menu</h2>
         <div class="ui list">
@@ -36,7 +43,6 @@
             </div>
             <div class="item">
                 <div class="header">Array</div>
-                <button class="ui small grey button" id="demo-dynamic-array">Dynamic Array Demo</button>
             </div>
             <div class="item">
                 <div class="header">Object</div>
@@ -45,11 +51,22 @@
                 <div class="header">Function</div>
             </div>
         </div>
+        <div class="ui divider"></div>
+        <div>
+            <h2 class="small header">Demo</h2>
+            <button class="ui small grey button" id="demo-dynamic-array">Dynamic Array Demo</button>
+        </div>
 
-        <div class="ui segment" id="demo-results"></div>
+        <div class="ui segment" id="demo-content-wrapper"></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
     <script src="main.js"></script>
+
+    <script>
+        $('.message .close').on('click', function() {
+            $(this).closest('.message').transition('fade');
+        });
+    </script>
 </body>
 </html>

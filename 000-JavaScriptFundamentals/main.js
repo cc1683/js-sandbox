@@ -63,17 +63,9 @@ console.log(addToConstObject(user1));
 
 
 //* Array
-const demoUI= document.getElementById('demo-results');
-const hideBtn = document.createElement('button');
-
-hideBtn.className = 'ui small red button right floated hide';
-hideBtn.textContent = 'Hide';
-demoUI.appendChild(hideBtn);
+const demoUI= document.getElementById('demo-content-wrapper');
 
 document.getElementById('demo-dynamic-array').addEventListener('click', dynamicArrayDemo);
-document.querySelector('.hide').addEventListener('click', () => {
-    demoUI.style.display = 'none';
-})
 
 function dynamicArrayDemo() {
     let memberList = [];
@@ -114,5 +106,3 @@ function dynamicArrayDemo() {
         demoUI.appendChild(dynamicArrayList);
     }
 }
-
-
