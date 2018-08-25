@@ -62,11 +62,12 @@ console.log(addToConstObject(user1));
 //? ============================================================================================================= ?//
 
 
-//* Array
+//* Array Demo
 const demoUI= document.getElementById('demo-content-wrapper');
 
 document.getElementById('demo-1').addEventListener('click', arrayDemoOne);
 document.getElementById('demo-2').addEventListener('click', arrayDemoTwo);
+document.getElementById('demo-3').addEventListener('click', arrayDemoThree);
 
 //! Array Demo 1
 function arrayDemoOne() {
@@ -91,18 +92,7 @@ function arrayDemoOne() {
         }
 
         createDemoContainer('Team Member List');
-
-        const arrayList = document.createElement('ul');
-
-        for(let u=0; u<memberList.length; u++) {
-            const arrayItem= document.createElement('li');
-            arrayItem.innerHTML = `<i class="fas fa-user"></i> `;
-            arrayItem.appendChild(document.createTextNode(memberList[u]));
-            arrayList.appendChild(arrayItem);
-        }
-
-        demoUI.appendChild(arrayList);
-
+        createDemoList(memberList);
         createReloadBtn('demo-1');
     }
 }
@@ -149,6 +139,30 @@ function arrayDemoTwo() {
     })
 }
 
+//! Array Demo 3
+function arrayDemoThree() {
+    createReloadBtn('demo-3');
+    const founders = ['John', 'Issac', 'Marie', 'Steve', 'Albert'];
+
+    createDemoContainer('Sorting');
+    createDemoList(founders);
+
+    const sortBtn = document.createElement('button');
+    sortBtn.className = 'ui small green button sort';
+    sortBtn.textContent = 'Sort';
+
+    demoUI.addEventListener('mousedown', (e) => {
+        if(e.target.classList.contains('sort')) {
+            sortName = founders.sort((a, b) => {
+                return a > b ? 1 : -1;
+            })
+            createDemoContainer('After sort....');  
+            createDemoList(sortName);
+        }
+    })
+    demoUI.appendChild(sortBtn);
+}
+
 //! Demo Title
 function createDemoContainer(title) {
     const demoTitle = document.createElement('p');
@@ -158,6 +172,20 @@ function createDemoContainer(title) {
 
     let container = demoUI.appendChild(demoTitle);
     return container;
+}
+
+//! Demo list
+function createDemoList(items) {
+    const arrayList = document.createElement('ul');
+
+    for(let u=0; u<items.length; u++) {
+        const arrayItem= document.createElement('li');
+        arrayItem.innerHTML = `<i class="fas fa-user"></i> `;
+        arrayItem.appendChild(document.createTextNode(items[u]));
+        arrayList.appendChild(arrayItem);
+    }
+    let list = demoUI.appendChild(arrayList);  
+    return list;
 }
 
 //! Reload Button
