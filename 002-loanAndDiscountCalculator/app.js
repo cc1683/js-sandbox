@@ -35,7 +35,6 @@ function calculateResults() {
     } else {
         showError('Please check your number input!');
     }
-
 }
 
 function showError(error) {
@@ -72,4 +71,44 @@ function clearInput() {
     years.value = '';
 
     document.getElementById('results').style.display = 'none';
+}
+
+//! Discount Calculator
+document.getElementById('discount-form').addEventListener('submit', function(e) {
+    document.getElementById('discount-results').style.display = 'none'
+    document.getElementById('discount-loading').style.display = 'block'
+
+    setTimeout(calculateDiscount, 1500);
+    e.preventDefault();
+});
+
+function calculateDiscount() {
+    const price = document.getElementById('price');
+    const discount = document.getElementById('discount');
+    const discountPrice = document.getElementById('discount-price');
+    let result;
+
+    priceValue = parseFloat(price.value);
+    discountValue = parseFloat(discount.value) / 100;
+
+    result = priceValue - (priceValue * discountValue);
+
+    discountPrice.value = result.toFixed(2);
+
+    document.getElementById('discount-results').style.display = 'block';
+    document.getElementById('discount-loading').style.display = 'none';
+}
+
+document.getElementById('discount-clear').addEventListener('click', clearDiscount);
+
+function clearDiscount() {
+    const price = document.getElementById('price');
+    const discount = document.getElementById('discount');
+    const discountPrice = document.getElementById('discount-price');
+
+    price.value = '';
+    discount.value = '';
+    discountPrice.value = '';
+
+    document.getElementById('discount-results').style.display = 'none';
 }
