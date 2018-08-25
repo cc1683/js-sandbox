@@ -1,3 +1,5 @@
 ## JavaScript Sandbox :memo:
 
-- :bookmark: [JavaScript Fundamentals with simple demo](https://cc1683.github.io/js-sandbox/000-JavaScriptFundamentals)
+- :bookmark: [JavaScript Fundamentals With Simple Demo](https://cc1683.github.io/js-sandbox/000-JavaScriptFundamentals)
+
+- :bookmark: [Simple Task List With Local Storage](https://cc1683.github.io/js-sandbox/001-taskListWithLocalStorage)
