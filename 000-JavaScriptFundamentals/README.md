@@ -1,5 +1,10 @@
 # JavaScript Fundamentals :computer:
 
+## Links
+-[JavaScript Primitive vs. References value](http://www.javascripttutorial.net/javascript-primitive-vs-reference-values/)
+
+-[Metaprogramming in ES6: Symbols and why they're awesome](https://www.keithcirkel.co.uk/metaprogramming-in-es6-symbols/)
+
 ## Variable Declarations
 In JavaScript, we can use **const**, **let**, and **var** to declare a variable. However, there are few differences between them.
 
