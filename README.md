@@ -1,6 +1,6 @@
 ## JavaScript Sandbox :memo:
 
-- :bookmark: [JavaScript Fundamentals With Simple Demo](https://cc1683.github.io/js-sandbox/000-JavaScriptFundamentals)
+- :bookmark: [JavaScript DOM Manipulation With Simple Demo](https://cc1683.github.io/js-sandbox/000-JavaScriptFundamentals)
 
 - :bookmark: [Simple Task List With Local Storage](https://cc1683.github.io/js-sandbox/001-taskListWithLocalStorage)
 
@@ -8,4 +8,4 @@
 
 ## References
 
--[Modern JavaScript From the Beginning](https://www.udemy.com/modern-javascript-from-the-beginning/)
+- [Modern JavaScript From the Beginning](https://www.udemy.com/modern-javascript-from-the-beginning/)
