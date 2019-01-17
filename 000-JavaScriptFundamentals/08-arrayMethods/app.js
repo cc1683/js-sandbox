@@ -44,3 +44,10 @@ val = numbers2.find(under50); //* return first number that under 50
 
 console.log(numbers);
 console.log(val);
+
+//! Loop through array
+const names = ['John', 'Steve', 'Smith', 'Jack'];
+
+names.forEach((name) => {
+  console.log(name);
+})

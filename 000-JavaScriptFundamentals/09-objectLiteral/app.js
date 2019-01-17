@@ -35,3 +35,15 @@ for(let i =0; i<people.length; i++) {
 }
 
 console.log(val);
+
+const user = {
+  name: 'John',
+  age: 25,
+  job: 'Network Operator'
+};
+
+//! Loop through object
+
+for(let x in user) {
+  console.log(user[x]);
+}
